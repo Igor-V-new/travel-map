@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша карта путешествий</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="map"></div>
+
+    <div id="panel">
+        <h3>Добавить место</h3>
+        <input type="text" id="placeName" placeholder="Название (город/место)" />
+        <input type="text" id="placeDesc" placeholder="Описание (необязательно)" />
+        <input type="file" id="placePhoto" accept="image/*" />
+        <button id="addBtn">Добавить на карту</button>
+        <p id="status"></p>
+        <hr />
+        <button id="exportBtn" class="secondary">Скачать резервную копию (JSON)</button>
+        <label class="secondary" style="display:block; text-align:center; padding:8px; border:1px solid #ddd; border-radius:8px; cursor:pointer; font-size:14px;">
+            Загрузить резервную копию
+            <input type="file" id="importInput" accept="application/json" style="display:none;" />
+        </label>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
