@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Наша карта путешествий</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://api-maps.yandex.ru/v3/?apikey=0bad9a86-00c3-43e8-b7af-7807c0bf24ff&lang=ru_RU"></script>
 </head>
 <body>
     <div id="map"></div>
@@ -14,18 +14,22 @@
         <h3>Добавить место</h3>
         <input type="text" id="placeName" placeholder="Название (город/место)" />
         <input type="text" id="placeDesc" placeholder="Описание (необязательно)" />
-        <input type="file" id="placePhoto" accept="image/*" />
+        <label class="file-label">
+            <span id="fileLabelText">Выбрать фото</span>
+            <input type="file" id="placePhoto" accept="image/*" />
+        </label>
         <button id="addBtn">Добавить на карту</button>
         <p id="status"></p>
-        <hr />
-        <button id="exportBtn" class="secondary">Скачать резервную копию (JSON)</button>
-        <label class="secondary" style="display:block; text-align:center; padding:8px; border:1px solid #ddd; border-radius:8px; cursor:pointer; font-size:14px;">
-            Загрузить резервную копию
-            <input type="file" id="importInput" accept="application/json" style="display:none;" />
+
+        <div class="divider"></div>
+
+        <button id="exportBtn" class="secondary">Скачать резервную копию</button>
+        <label class="secondary file-label">
+            <span>Загрузить резервную копию</span>
+            <input type="file" id="importInput" accept="application/json" />
         </label>
     </div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
